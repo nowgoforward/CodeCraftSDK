@@ -7,6 +7,7 @@
 
 #include "Base.h"
 void BoatControl();
+void BoatLoad();
 
 
 #endif //CODECRAFTSDK_BOAT_H

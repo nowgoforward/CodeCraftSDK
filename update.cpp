@@ -27,13 +27,16 @@ void init() // 读入，初始化，//轮船泊点初始化
     scanf("%d", &boat_capacity);
     scanf("%s", cache);//OK
     puts("OK");//for test
+
     //fflush(stdout);
 }
 
 void frameIn() // 读入，
 {
     int K;
+    puts("OK");
     scanf("%d%d%d", &frame, &money, &K);
+    printf("frame money K %d %d %d\n", frame, money, K);
     Item new_item;
     for (int i = 1; i <= K; i++) {
         scanf("%d%d", &new_item.x, &new_item.y);
@@ -58,21 +61,20 @@ void frameIn() // 读入，
 void error() {
     //错误处理
 }
-void process()
-{
-    robotControl();//路径更新,x,y更新
+
+void process() {
+    robotControl();//路径更新,x,y更新 PATH完成
     printf("robotControll Finsih.\n");
+    printf("frame %d", frame);
     for (int i = 0; i < 10; i++) {
-        if(robot[i].d!=-1)
-        {
+        if (robot[i].d != -1) {
             robot[i].aim_x = robot[i].x + dir[robot[i].d][0];
             robot[i].aim_y = robot[i].y + dir[robot[i].d][1];
-            printf("robot_aim %d",i);
-            printf("%d %d\n",robot[i].aim_x,robot[i].aim_y);//for test
+            printf("robot_aim %d", i);
+            printf("%d %d\n", robot[i].aim_x, robot[i].aim_y);//for test
         }
-    }//机器人下一步更新
-    if(frame==1)
-    {
+    }//机器人下一步更新//TO CHANGE
+    if (frame == 1) {
         for (int i = 0; i < BOATNUM; i++) {
             int Imin = INT_MAX, choice = 0;
             for (int j = 0; j < BERTHNUM; j++)
@@ -81,15 +83,21 @@ void process()
                     choice = j;
                 }
             boat[i].target = choice;
-            boat[i].state = 1;//
+            boat[i].state = 0;//
             berth[choice].state = 2;
-            berth[choice].arrival_time = Imin;
+            berth[choice].boat_id = i;
+            berth[choice].arrival_time = Imin + frame;
+            //TODO
             //printf("%d\n",boat[i].target);
+            printf("\nberth id frame:%d\n", frame);
+
         }
+        for (int i = 0; i < 5; i++)
+            printf("%d ", boat[i].target);
+        printf("\n");//第一次船第二帧才到位？
         // 初始船队分配,最快到泊位原则
     }//船只初始化//fine
-    else
-    {
+    else {
         BoatControl();
     }//满载判断
     BoatLoad();
@@ -111,6 +119,6 @@ void frameOut() // 输出
                 printf("go %d\n", i);
             else printf("ship %d %d\n", i, boat[i].target);
         }
-    puts("OK");
-    fflush(stdout);
+    //puts("OK");
+    //fflush(stdout);
 }

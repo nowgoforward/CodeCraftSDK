@@ -4,8 +4,6 @@
 
 #include "robotfind.h"
 
-
-
 void itemSearch(Item& it)//货物找泊位()
 {
     if(it.berth_id!=-1)
@@ -46,7 +44,7 @@ void robotFind(int id)//为空载的机器人规划路径
          }
         iter++;
         }
-    bool ret= star(robot[id].x,robot[id].y,best->x,best->y,robot[id].ripath)&&
+    bool ret= star(robot[id].x,robot[id].y,best->x,best->y,robot[id].path)&&
             star(best->x,best->y,best->berth_id,robot[id].ibpath);
             if(ret)
             {
@@ -54,12 +52,10 @@ void robotFind(int id)//为空载的机器人规划路径
                 robot[id].item = *best;
                 item_list.erase(best);
                 robot[id].load = true;
-                robot[id].ripath.assign(robot[id].ibpath.begin(),robot[id].ibpath.end());
-                robot[id].path=robot[id].ripath;
-                cout<<"robot"<<id<<":"<<robot[id].x<<","<<robot[id].y<<";"<<robot[id].item.x<<","<<robot[id].item.y<<":";
-                for(auto i:robot[id].path)
-                 cout<<i<<" ";
-                  cout<<"\n";
+                robot[id].path.splice(robot[id].path.end(),robot[id].ibpath);
+                /*for(auto j:robot[id].path)
+                    printf("%d ",j);
+                printf("\n");*/
             }
 
 }

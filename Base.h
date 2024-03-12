@@ -54,7 +54,7 @@ namespace S
         static void set(int x_,int y_){x=x_;y=y_;}
         bool operator() (S::Token*a,S::Token*b)
         {
-            return getDist(a->x,a->y,x,y)<getDist(b->x,b->y,x,y);
+            return getDist(a->x,a->y,x,y)>getDist(b->x,b->y,x,y);
         }
     };
     bool isinberth(int x,int y,int id);
@@ -121,9 +121,12 @@ struct Berth
     int x,y;
     int transport_time;
     int loading_speed;
+    int add;
+    int boat_id;
     //考虑机器人同时达到
     int state;        // 0表示无船，1表示有船，2表示即将有船
     int arrival_time; // state=2的条件下，船达到的帧
+    list<int> item_value;
 };
 
 struct Boat

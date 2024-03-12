@@ -231,4 +231,5 @@ CMakeFiles/main.dir/main.cpp.obj: \
  D:/C++/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
  D:/C++/CLion\ 2023.3.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/quoted_string.h \
  C:\Users\86188\Desktop\CodeCraftSDK-main\robotfind.h \
- C:\Users\86188\Desktop\CodeCraftSDK-main\util.h
+ C:\Users\86188\Desktop\CodeCraftSDK-main\util.h \
+ C:\Users\86188\Desktop\CodeCraftSDK-main\boat.h
