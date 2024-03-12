@@ -6,6 +6,7 @@
 #define CODECRAFTSDK_UPDATE_H
 
 #include "robot.h"
+#include "boat.h"
 
 void init();
 void frameIn();

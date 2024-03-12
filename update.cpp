@@ -53,6 +53,13 @@ void frameIn() // 读入，
         boat[i].update(state, berth_id);
     }//同步
     scanf("%s", cache);
+}
+
+void error() {
+    //错误处理
+}
+void process()
+{
     robotControl();//路径更新,x,y更新
     printf("robotControll Finsih.\n");
     for (int i = 0; i < 10; i++) {
@@ -83,16 +90,9 @@ void frameIn() // 读入，
     }//船只初始化//fine
     else
     {
-
+        BoatControl();
     }//满载判断
-}
-
-void error() {
-    //错误处理
-}
-
-void process() {
-    robotControl();
+    BoatLoad();
 }
 
 void frameOut() // 输出
