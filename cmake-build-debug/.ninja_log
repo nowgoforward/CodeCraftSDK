@@ -1,0 +1,12 @@
+# ninja log v5
+1	301	1710159067866504297	CMakeFiles/main.dir/boat.cpp.o	f1f637f746271758
+0	303	1710159067868404740	CMakeFiles/main.dir/Base.cpp.o	98f37ce9c926d483
+1	304	1710159067867171015	CMakeFiles/main.dir/robot.cpp.o	f452bf7f3ba8fa3e
+1	312	1710159067877236399	CMakeFiles/main.dir/update.cpp.o	d0b761c8ab710458
+0	313	1710159067878764294	CMakeFiles/main.dir/action.cpp.o	4c909abbb65cf1f3
+1	325	1710159067890311948	CMakeFiles/main.dir/main.cpp.o	1c9e449387bfa39f
+1	326	1710159067890522534	CMakeFiles/main.dir/robotfind.cpp.o	4ec27fe45c54fab8
+1	340	1710159067905045311	CMakeFiles/main.dir/util.cpp.o	9c2a07bbe358e059
+340	368	1710159067935356174	main	7f9fdde3bce1347f
+3	308	1710159092133315730	CMakeFiles/main.dir/main.cpp.o	1c9e449387bfa39f
+308	340	1710159092166774634	main	7f9fdde3bce1347f
